@@ -1,0 +1,9 @@
+export const UserAlreadyExistError = 'UserAlreadyExistError';
+export const UserInfoNotCreatedError = 'UserInfoNotCreatedError';
+export const UserTypeNotFoundError = 'UserTypeNotFoundError';
+export const UserRegisterFailedError = 'UserRegisterFailedError';
+export const UserUpdateFailedError = 'UserUpdateFailedError';
+export const PartialUserCreateError = 'PartialUserCreateError';
+export const UserNotFoundError = 'UserNotFoundError';
+export const UserTypeMismatchError = 'UserTypeMismatchError';
+export const WrongPasswordError = 'WrongPasswordError';
