@@ -10,27 +10,27 @@ import { DeviceTracker } from "./middlewares/deviceTracker.middleware";
 import { FeatureModule } from "./modules/Feature.module";
 
 @Module({
-  imports: [CommonModule, FeatureModule],
-  controllers: [],
-  providers: [
-    RedisService,
-    BaseLogger,
-    {
-      provide: APP_INTERCEPTOR,
-      useClass: ResponseInterceptor,
-    },
-    {
-      provide: APP_FILTER,
-      useClass: AllExceptionsFilter,
-    },
-    {
-      provide: APP_GUARD,
-      useClass: CustomThrottlerGuard,
-    },
-  ],
+	imports: [CommonModule, FeatureModule],
+	controllers: [],
+	providers: [
+		RedisService,
+		BaseLogger,
+		{
+			provide: APP_INTERCEPTOR,
+			useClass: ResponseInterceptor,
+		},
+		{
+			provide: APP_FILTER,
+			useClass: AllExceptionsFilter,
+		},
+		{
+			provide: APP_GUARD,
+			useClass: CustomThrottlerGuard,
+		},
+	],
 })
 export class AppModule implements NestModule {
-  configure(consumer: MiddlewareConsumer): void {
-    consumer.apply(DeviceTracker).forRoutes("*");
-  }
+	configure(consumer: MiddlewareConsumer): void {
+		// consumer.apply(DeviceTracker).forRoutes("*");
+	}
 }
